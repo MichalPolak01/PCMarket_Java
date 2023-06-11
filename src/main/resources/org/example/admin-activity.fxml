@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="1344.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AdminMainPageController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="background" stylesheets="@applicationStyle.css">
+         <children>
+            <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="756.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="50.0" layoutY="178.0" prefHeight="756.0" prefWidth="300.0" styleClass="leftSide_window" stylesheets="@applicationStyle.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="25.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="280.0" layoutX="43.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <image>
+                                    <Image url="@img/pcmarket_logoNapisPoziom.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="label_welcome" alignment="CENTER" layoutX="48.0" layoutY="130.0" prefHeight="45.0" prefWidth="188.0" styleClass="information-text" stylesheets="@applicationStyle.css" text="Witaj, Michał" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="140.0" />
+                              <Button fx:id="dashboard" layoutX="15.0" layoutY="294.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" styleClass="nav" stylesheets="@applicationStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" />
+                              <Button fx:id="storage" layoutX="15.0" layoutY="359.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" styleClass="nav" stylesheets="@applicationStyle.css" text="Magazyn" AnchorPane.leftAnchor="15.0" />
+                              <Button fx:id="orders" layoutX="15.0" layoutY="427.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" styleClass="nav" stylesheets="@applicationStyle.css" text="Zamówienia" AnchorPane.leftAnchor="15.0" />
+                              <Button fx:id="admin_panel" layoutX="15.0" layoutY="490.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" styleClass="nav" stylesheets="@applicationStyle.css" text="Admin Panel" AnchorPane.leftAnchor="15.0" />
+                              <AnchorPane prefHeight="50.0" prefWidth="300.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <children>
+                                    <Button fx:id="logout" layoutX="22.0" layoutY="113.0" mnemonicParsing="false" onAction="#logout" styleClass="logout" stylesheets="@applicationStyle.css">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="#189ab4" glyphName="SIGN_OUT" size="3em" styleClass="logout" text="" />
+                                       </graphic>
+                                    </Button>
+                                    <Label layoutX="99.0" layoutY="120.0" styleClass="information-text" text="Wyloguj się " AnchorPane.bottomAnchor="6.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@applicationStyle.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="scene_dashboard" prefHeight="250.0" prefWidth="1044.0" stylesheets="@applicationStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="24.0" layoutY="22.0" prefHeight="250.0" prefWidth="1006.0" styleClass="window" stylesheets="@applicationStyle.css" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="25.0">
+                                 <children>
+                                    <ScrollPane prefHeight="250.0" prefWidth="1400.0" styleClass="background" stylesheets="@applicationStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <AnchorPane prefHeight="238.0" prefWidth="1553.0" styleClass="background" stylesheets="@applicationStyle.css">
+                                             <children>
+                                                <AnchorPane prefHeight="180.0" prefWidth="360.0" styleClass="info-box" stylesheets="@applicationStyle.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="15.0">
+                                                   <children>
+                                                      <FontAwesomeIcon fill="#0c2d48" glyphName="USERS" layoutX="116.0" layoutY="175.0" size="10em" AnchorPane.bottomAnchor="15.857139587402344" />
+                                                      <Label alignment="CENTER" layoutX="56.0" layoutY="14.0" styleClass="label-info-box" stylesheets="@applicationStyle.css" text="Aktywne konta klientów:" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0" />
+                                                      <Label fx:id="dashboard_users" alignment="CENTER" layoutY="44.0" styleClass="label-info-box" stylesheets="@applicationStyle.css" text="0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="376.0" layoutY="25.0" prefHeight="180.0" prefWidth="360.0" styleClass="info-box" stylesheets="@applicationStyle.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="405.0" AnchorPane.topAnchor="15.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="56.0" layoutY="14.0" styleClass="label-info-box" stylesheets="@applicationStyle.css" text="Dzisiejsze przychody" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0" />
+                                                      <Label fx:id="dashboard_todays_revenues" alignment="CENTER" layoutY="44.0" styleClass="label-info-box" stylesheets="@applicationStyle.css" text="0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+                                                      <FontAwesomeIcon fill="#0c2d48" glyphName="MONEY" layoutX="109.0" layoutY="170.0" size="11em" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="734.0" layoutY="24.0" prefHeight="180.0" prefWidth="360.0" styleClass="info-box" stylesheets="@applicationStyle.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="790.0" AnchorPane.topAnchor="15.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="56.0" layoutY="14.0" styleClass="label-info-box" stylesheets="@applicationStyle.css" text="Miesięczne przychody" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0" />
+                                                      <Label fx:id="dashboard_monthly_revenues" alignment="CENTER" layoutY="44.0" styleClass="label-info-box" stylesheets="@applicationStyle.css" text="0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+                                                      <FontAwesomeIcon fill="#0c2d48" glyphName="MONEY" layoutX="109.0" layoutY="170.0" size="11em" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="1092.0" layoutY="23.0" prefHeight="180.0" prefWidth="370.0" styleClass="info-box" stylesheets="@applicationStyle.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="1175.0" AnchorPane.topAnchor="15.0">
+                                                   <children>
+                                                      <FontAwesomeIcon fill="#0c2d48" glyphName="ARCHIVE" layoutX="125.0" layoutY="175.0" size="10em" AnchorPane.bottomAnchor="15.857139587402344" />
+                                                      <Label alignment="CENTER" layoutX="56.0" layoutY="14.0" styleClass="label-info-box" stylesheets="@applicationStyle.css" text="Sprzedane produkty" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0" />
+                                                      <Label fx:id="dashboard_sold_items" alignment="CENTER" layoutY="44.0" styleClass="label-info-box" stylesheets="@applicationStyle.css" text="0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="20.0" layoutY="299.0" prefHeight="430.0" prefWidth="1004.0" styleClass="window" stylesheets="@applicationStyle.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="295.0">
+                                 <children>
+                                    <AnchorPane layoutX="38.0" layoutY="32.0" prefHeight="377.0" prefWidth="450.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="529.0" AnchorPane.topAnchor="20.0">
+                                       <children>
+                                          <AreaChart fx:id="dashboard_revenues" layoutX="-27.0" layoutY="-23.0" prefHeight="391.0" prefWidth="473.0" styleClass="info-box" stylesheets="@applicationStyle.css" title="Przychody" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </AreaChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="512.0" layoutY="40.0" prefHeight="376.0" prefWidth="461.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                       <children>
+                                          <BarChart fx:id="dashboard_items" layoutX="-16.0" layoutY="-4.0" prefHeight="396.0" prefWidth="484.0" styleClass="info-box" title="Zamówione produkty" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </BarChart>
+                                       </children>
+                                    </AnchorPane>
+                                 </children></AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="scene_inventory" layoutX="10.0" layoutY="10.0" prefHeight="766.0" prefWidth="1620.0" stylesheets="@applicationStyle.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="25.0" layoutY="24.0" prefHeight="350.0" prefWidth="993.0" styleClass="window" stylesheets="@applicationStyle.css" AnchorPane.bottomAnchor="381.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+                                 <children>
+                                    <TableView fx:id="inventory_tableView" layoutX="86.0" layoutY="27.0" prefHeight="350.0" prefWidth="994.0" styleClass="scroll" stylesheets="@applicationStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn fx:id="inventory_col_product_id" prefWidth="75.0" text="ID produktu" />
+                                          <TableColumn fx:id="inventory_col_name" prefWidth="75.0" text="Nazwa" />
+                                          <TableColumn fx:id="inventory_col_mark" prefWidth="75.0" text="Marka" />
+                                          <TableColumn fx:id="inventory_col_price" prefWidth="75.0" text="Cena" />
+                                          <TableColumn fx:id="inventory_col_amount" prefWidth="75.0" text="Ilość" />
+                                          <TableColumn fx:id="inventory_col_category" prefWidth="75.0" text="Kategoria" />
+                                          <TableColumn fx:id="inventory_col_link_img" prefWidth="102.0" text="Link do zdjęcia" />
+                                          <TableColumn fx:id="inventory_col_description" prefWidth="75.0" text="Opis" />
+                                          <TableColumn fx:id="inventory_col_date" prefWidth="75.0" text="Data dodania" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="25.0" layoutY="394.0" prefHeight="322.0" prefWidth="994.0" styleClass="window" stylesheets="@applicationStyle.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+                                 <children>
+                                    <ComboBox fx:id="operation" layoutX="43.0" layoutY="14.0" prefHeight="0.0" prefWidth="150.0" promptText="Wybierz operację" styleClass="normal-text" stylesheets="@applicationStyle.css" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0" />
+                                    <Label fx:id="operation_name" layoutX="40.0" layoutY="28.0" styleClass="information-text" stylesheets="@applicationStyle.css" text="Nazwa operacji" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="10.0" />
+                                    <AnchorPane fx:id="addPane" layoutX="35.0" layoutY="81.0" prefHeight="230.0" prefWidth="200.0" styleClass="info-box" stylesheets="@applicationStyle.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                                       <children>
+                                          <GridPane layoutX="257.0" layoutY="60.0" prefHeight="210.0" prefWidth="934.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label layoutX="31.0" layoutY="55.0" styleClass="normal-text" stylesheets="@applicationStyle.css" text="Nazwa" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                                         <graphic>
+                                                            <TextField fx:id="add_product_name" prefHeight="30.0" prefWidth="180.0" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label layoutX="32.0" layoutY="96.0" styleClass="normal-text" stylesheets="@applicationStyle.css" text="Marka" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="69.0">
+                                                         <graphic>
+                                                            <TextField fx:id="add_product_mark" prefWidth="180.0" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label layoutX="23.0" layoutY="138.0" styleClass="normal-text" stylesheets="@applicationStyle.css" text="Kategoria" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="118.0">
+                                                         <graphic>
+                                                            <ComboBox fx:id="add_product_category" prefWidth="180.0" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label layoutX="10.0" layoutY="171.0" styleClass="normal-text" stylesheets="@applicationStyle.css" text="Link do zdjęcia" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="169.0">
+                                                         <graphic>
+                                                            <TextField fx:id="add_product_link_img" prefWidth="180.0" text="https://i.imgur.com/ORENqmP.png" />
+                                                         </graphic>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <TextArea fx:id="add_product_description" layoutX="37.0" layoutY="44.0" prefHeight="151.0" prefWidth="290.0" styleClass="normal-text" stylesheets="@applicationStyle.css" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0" />
+                                                      <Label alignment="CENTER_RIGHT" layoutX="49.0" layoutY="18.0" prefHeight="31.0" styleClass="normal-text" stylesheets="@applicationStyle.css" text="Opis:" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                                   <children>
+                                                      <Label layoutX="53.0" layoutY="22.0" styleClass="normal-text" text="Cena" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                                         <graphic>
+                                                            <TextField fx:id="add_product_price" prefWidth="180.0" stylesheets="@applicationStyle.css" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label layoutX="53.0" layoutY="59.0" styleClass="normal-text" text="Ilość" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="69.0">
+                                                         <graphic>
+                                                            <TextField fx:id="add_product_amount" prefWidth="180.0" stylesheets="@applicationStyle.css" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Button fx:id="add_product" layoutX="129.0" layoutY="156.0" mnemonicParsing="false" onAction="#onClickAddProduct" prefHeight="50.0" prefWidth="220.0" styleClass="operation-button" stylesheets="@applicationStyle.css" text="Dodaj" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="updatePane" layoutX="30.0" layoutY="82.0" prefHeight="230.0" prefWidth="200.0" styleClass="info-box" stylesheets="@applicationStyle.css" visible="false" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                                       <children>
+                                          <GridPane layoutX="257.0" layoutY="60.0" prefHeight="210.0" prefWidth="934.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label layoutX="59.0" layoutY="23.0" styleClass="normal-text" stylesheets="@applicationStyle.css" text="ID produktu" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                                         <graphic>
+                                                            <TextField fx:id="update_product_id" prefWidth="180.0" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label layoutX="31.0" layoutY="55.0" styleClass="normal-text" stylesheets="@applicationStyle.css" text="Nazwa" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="51.0">
+                                                         <graphic>
+                                                            <TextField fx:id="update_product_name" disable="true" prefHeight="30.0" prefWidth="180.0" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label layoutX="32.0" layoutY="96.0" styleClass="normal-text" stylesheets="@applicationStyle.css" text="Marka" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="92.0">
+                                                         <graphic>
+                                                            <TextField fx:id="update_product_mark" disable="true" prefWidth="180.0" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label layoutX="23.0" layoutY="138.0" styleClass="normal-text" stylesheets="@applicationStyle.css" text="Kategoria" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="133.0">
+                                                         <graphic>
+                                                            <ComboBox fx:id="update_product_category" disable="true" prefWidth="180.0" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label layoutX="10.0" layoutY="171.0" styleClass="normal-text" stylesheets="@applicationStyle.css" text="Link do zdjęcia" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="174.0">
+                                                         <graphic>
+                                                            <TextField fx:id="update_product_link_img" disable="true" prefWidth="180.0" />
+                                                         </graphic>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <TextArea fx:id="update_product_description" disable="true" layoutX="37.0" layoutY="44.0" prefHeight="151.0" prefWidth="290.0" styleClass="normal-text" stylesheets="@applicationStyle.css" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0" />
+                                                      <Label alignment="CENTER_RIGHT" layoutX="49.0" layoutY="18.0" prefHeight="31.0" styleClass="normal-text" stylesheets="@applicationStyle.css" text="Opis" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                                   <children>
+                                                      <Label layoutX="53.0" layoutY="22.0" styleClass="normal-text" text="Cena" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="10.0">
+                                                         <graphic>
+                                                            <TextField fx:id="update_product_price" disable="true" prefWidth="180.0" stylesheets="@applicationStyle.css" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label layoutX="53.0" layoutY="59.0" styleClass="normal-text" text="Ilość" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="51.0">
+                                                         <graphic>
+                                                            <TextField fx:id="update_product_amount" disable="true" prefWidth="180.0" stylesheets="@applicationStyle.css" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Button fx:id="update_product_button" disable="true" layoutX="129.0" layoutY="156.0" mnemonicParsing="false" onAction="#onClickUpdateProduct" prefHeight="50.0" prefWidth="220.0" styleClass="operation-button" stylesheets="@applicationStyle.css" text="Aktualizuj" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="deletePane" layoutX="40.0" layoutY="92.0" prefHeight="230.0" prefWidth="200.0" styleClass="info-box" stylesheets="@applicationStyle.css" visible="false" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                                       <children>
+                                          <GridPane layoutX="257.0" layoutY="60.0" prefHeight="210.0" prefWidth="934.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <Button layoutX="20.0" layoutY="149.0" mnemonicParsing="false" onAction="#onClickDeleteProduct" prefHeight="50.0" prefWidth="220.0" styleClass="operation-button" stylesheets="@applicationStyle.css" text="Usuń" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="30.0" />
+                                                      <Label layoutX="92.0" layoutY="26.0" styleClass="normal-text" stylesheets="@applicationStyle.css" text="ID produktu" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="50.0">
+                                                         <graphic>
+                                                            <TextField fx:id="delete_product_id" prefWidth="180.0" />
+                                                         </graphic>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children></AnchorPane>
+                              <AnchorPane prefHeight="756.0" prefWidth="1044.0" styleClass="background" stylesheets="@applicationStyle.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <AnchorPane layoutX="25.0" layoutY="24.0" prefHeight="350.0" prefWidth="993.0" styleClass="window" stylesheets="@applicationStyle.css" AnchorPane.bottomAnchor="381.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0" />
+                                    <AnchorPane layoutX="25.0" layoutY="394.0" prefHeight="322.0" prefWidth="994.0" styleClass="window" stylesheets="@applicationStyle.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="scene_admin_panel" prefHeight="756.0" prefWidth="1029.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane prefHeight="756.0" prefWidth="1029.0" styleClass="window" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+                                 <children>
+                                    <GridPane fx:id="account_pane" alignment="CENTER" prefHeight="752.0" prefWidth="979.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@img/person_icon.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <ImageView fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@img/pngtree-map-location-pin-with-red-png-image_6586103.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label fx:id="operation_name1" styleClass="information-text" stylesheets="@applicationStyle.css" text="Edytuj dane osobowe" />
+                                                <Label contentDisplay="RIGHT" text="Imie:" textFill="#70c4c0">
+                                                   <font>
+                                                      <Font name="Agency FB" size="18.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <TextField fx:id="s_name" prefHeight="20.0" prefWidth="250.0" promptText="Imie" styleClass="field" stylesheets="@loginStyle.css">
+                                                         <padding>
+                                                            <Insets left="10.0" />
+                                                         </padding>
+                                                      </TextField>
+                                                   </graphic>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label contentDisplay="RIGHT" text="Nazwisko:" textFill="#70c4c0">
+                                                   <font>
+                                                      <Font name="Agency FB" size="18.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <TextField fx:id="s_surname" prefHeight="20.0" prefWidth="250.0" promptText="Nazwisko" styleClass="field" stylesheets="@loginStyle.css">
+                                                         <padding>
+                                                            <Insets left="10.0" />
+                                                         </padding>
+                                                      </TextField>
+                                                   </graphic>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label contentDisplay="RIGHT" text="Telefon:" textFill="#70c4c0">
+                                                   <font>
+                                                      <Font name="Agency FB" size="18.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <TextField fx:id="s_phone" prefHeight="29.0" prefWidth="250.0" promptText="Numer telefonu" styleClass="field" stylesheets="@loginStyle.css">
+                                                         <padding>
+                                                            <Insets left="10.0" />
+                                                         </padding>
+                                                      </TextField>
+                                                   </graphic>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label contentDisplay="RIGHT" text="E-mail:" textFill="#70c4c0">
+                                                   <font>
+                                                      <Font name="Agency FB" size="18.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <TextField fx:id="s_email" prefHeight="29.0" prefWidth="250.0" promptText="Adres e-mail" styleClass="field" stylesheets="@loginStyle.css">
+                                                         <padding>
+                                                            <Insets left="10.0" />
+                                                         </padding>
+                                                      </TextField>
+                                                   </graphic>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Button mnemonicParsing="false" onAction="#updatePersonalData" prefWidth="250.0" text="Aktualizuj">
+                                                   <styleClass>
+                                                      <String fx:value="operation-button" />
+                                                      <String fx:value="shadow" />
+                                                   </styleClass>
+                                                   <VBox.margin>
+                                                      <Insets top="50.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label fx:id="operation_name11" styleClass="information-text" stylesheets="@applicationStyle.css" text="Edytuj dane adresowe" />
+                                                <Label contentDisplay="RIGHT" text="Ulica:" textFill="#70c4c0">
+                                                   <font>
+                                                      <Font name="Agency FB" size="18.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <TextField fx:id="s_street" prefHeight="20.0" prefWidth="250.0" promptText="Ulica" styleClass="field" stylesheets="@loginStyle.css">
+                                                         <padding>
+                                                            <Insets left="10.0" />
+                                                         </padding>
+                                                      </TextField>
+                                                   </graphic>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label contentDisplay="RIGHT" text="Miasto:" textFill="#70c4c0">
+                                                   <font>
+                                                      <Font name="Agency FB" size="18.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <TextField fx:id="s_city" prefHeight="20.0" prefWidth="250.0" promptText="Miasto" styleClass="field" stylesheets="@loginStyle.css">
+                                                         <padding>
+                                                            <Insets left="10.0" />
+                                                         </padding>
+                                                      </TextField>
+                                                   </graphic>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label contentDisplay="RIGHT" text="Kod:" textFill="#70c4c0">
+                                                   <font>
+                                                      <Font name="Agency FB" size="18.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <TextField fx:id="s_zipCode" prefHeight="20.0" prefWidth="250.0" promptText="Kod pocztowy" styleClass="field" stylesheets="@loginStyle.css">
+                                                         <padding>
+                                                            <Insets left="10.0" />
+                                                         </padding>
+                                                      </TextField>
+                                                   </graphic>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Button mnemonicParsing="false" onAction="#updateAddressData" prefWidth="250.0" text="Aktualizuj">
+                                                   <VBox.margin>
+                                                      <Insets top="70.0" />
+                                                   </VBox.margin>
+                                                   <styleClass>
+                                                      <String fx:value="operation-button" />
+                                                      <String fx:value="shadow" />
+                                                   </styleClass>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                             <children>
+                                                <ImageView fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@img/921359.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                          <VBox alignment="CENTER" layoutX="333.0" layoutY="358.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label fx:id="operation_name111" styleClass="information-text" stylesheets="@applicationStyle.css" text="Dodaj pracownika" />
+                                                <Label contentDisplay="RIGHT" text="Email:" textFill="#70c4c0">
+                                                   <font>
+                                                      <Font name="Agency FB" size="18.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <TextField fx:id="worker_email" prefHeight="20.0" prefWidth="250.0" promptText="Adres e-mail" styleClass="field" stylesheets="@loginStyle.css">
+                                                         <padding>
+                                                            <Insets left="10.0" />
+                                                         </padding>
+                                                      </TextField>
+                                                   </graphic>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Button mnemonicParsing="false" onAction="#addNewWorker" prefWidth="250.0" text="Dodaj">
+                                                   <VBox.margin>
+                                                      <Insets top="70.0" />
+                                                   </VBox.margin>
+                                                   <styleClass>
+                                                      <String fx:value="operation-button" />
+                                                      <String fx:value="shadow" />
+                                                   </styleClass>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="scene_orders" prefHeight="756.0" prefWidth="1029.0" styleClass="window" visible="false" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+                           <children>
+                              <ScrollPane fx:id="scroll" prefHeight="652.0" prefWidth="637.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                 <content>
+                                    <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

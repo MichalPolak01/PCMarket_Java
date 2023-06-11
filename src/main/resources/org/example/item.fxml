@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane minWidth="280.0" onMousePressed="#click" prefHeight="215.0" prefWidth="280.0" stylesheets="@applicationStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ItemControler">
+   <children>
+      <VBox layoutX="250.0" layoutY="116.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label fx:id="labelName" alignment="CENTER" contentDisplay="CENTER" text="Nazwa" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="labelImage" fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="30.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="labelPrice" text="Cena" />
+               </children>
+            </HBox>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </VBox>
+   </children>
+   <styleClass>
+      <String fx:value="product" />
+      <String fx:value="shadow" />
+   </styleClass>
+</AnchorPane>

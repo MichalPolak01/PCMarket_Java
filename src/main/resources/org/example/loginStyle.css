@@ -1,0 +1,61 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&&family=Dancing+Script:wght@700&family=Righteous&display=swap');
+
+
+.gradient {
+    -fx-background-color: linear-gradient(to right , #4E31AA, #2F58CD);
+}
+
+.login-button {
+    -fx-background-color: #0C2D4899;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-text-fill: #2E8BC0;
+    -fx-font-family:Courgette;
+    -fx-font-size: 20px;
+    -fx-transition: background-color 5.5s;
+}
+.login-button:hover {
+    -fx-background-color: #0C2D4866;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-border-color: #2E8BC0;
+}
+
+.change_scene-button {
+    -fx-background-color: #B1D4E0CC;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-fill: #145DA0;
+    -fx-font-family: Courgette;
+    -fx-font-size: 20px;
+    -fx-transition: background-color 5.5s;
+}
+
+.change_scene-button:hover {
+    -fx-background-color: #B1D4E01A;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #0C2D4899;
+    -fx-border-width: 2px;
+}
+
+.information-text {
+    -fx-font-family: 'Righteous';
+    -fx-font-size: 45px;
+    -fx-fill: #189ab4;
+}
+
+.field {
+    -fx-background-color: #B1D4E0CC;
+    -fx-border-color: #0C2D48;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 10px;
+    -fx-prompt-text-fill: #0C2D48CC;
+    -fx-fill: #0C2D48;
+    -fx-font-family: 'Dancing Script';
+}
+
+.field:focused {
+    -fx-border-width: 2px;
+}

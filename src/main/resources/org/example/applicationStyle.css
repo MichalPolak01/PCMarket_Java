@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&&family=Patrick+Hand&&family=Courgette&&family=Dancing+Script:wght@700&family=Righteous&display=swap');
+
+.leftSide_window {
+    -fx-background-radius: 10px;
+    -fx-background-color: linear-gradient(to right, #4E31AA, #2F58CD);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+
+.rightSide_window {
+    -fx-background-radius: 10px;
+    -fx-background-color: linear-gradient(to right, #2F58CD, #4E31AA);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+
+.gradient {
+    -fx-background-color: linear-gradient(to right, #4E31AA, #2F58CD, #4E31AA);
+}
+
+.window {
+    -fx-background-color: #2F58CD;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+    -fx-padding: 5px;
+}
+
+.info-box {
+    -fx-background-color: #B1D4E0CC;
+    -fx-background-radius: 11px;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #0C2D48;
+}
+
+.nav {
+    -fx-background-color: transparent;
+    -fx-border-color: #B1D4E0CC;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-text-fill: #189ab4;
+    -fx-font-size: 20px;
+    -fx-font-weight: 700;
+    -fx-font-family: "Bruno Ace SC";
+}
+
+.nav:hover {
+    -fx-font-size: 22px;
+    -fx-background-color: #B1D4E033;
+}
+
+.border_window {
+    -fx-background-color: #B1D4E033;
+    /*-fx-border-width: 2px;*/
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+    -fx-padding: 5px;
+
+}
+
+.information-text {
+    -fx-font-family: 'Righteous';
+    -fx-font-size: 30px;
+    -fx-text-fill: #189ab4;
+}
+
+.logout {
+    -fx-background-color: transparent;
+    -fx-border-color: #B1D4E0CC;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-padding: 8px;
+    -fx-cursor: hand;
+}
+
+.logout:hover {
+    -fx-background-color: #B1D4E033;
+}
+
+.label-info-box {
+    -fx-font-family: 'Righteous';
+    -fx-text-fill: #0C2D48;
+    -fx-font-size: 20px;
+}
+
+.scroll {
+    -fx-background-radius: 12px;
+}
+
+.background {
+    -fx-background-color: #2F58CD;
+}
+
+.shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+
+.normal-text {
+    -fx-font-family: 'Patrick Hand';
+    -fx-font-size: 18px;
+    -fx-fill: #189ab4;
+    -fx-text-fill: #189ab4;
+}
+
+.description {
+    -fx-font-family: 'Patrick Hand';
+    -fx-font-size: 15px;
+    -fx-fill: #189ab4;
+    -fx-text-fill: #189ab4;
+}
+
+.description_black {
+    -fx-font-family: 'Patrick Hand';
+    -fx-font-size: 15px;
+    -fx-fill: black;
+    -fx-text-fill: black;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #4E31AA;
+    -fx-border-width: 3px;
+    -fx-border-radius: 10px;
+    -fx-padding: 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: #4E31AA;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #189ab4;
+    -fx-font-family: 'Patrick Hand';
+    -fx-font-size: 18px;
+}
+
+.operation-button {
+    -fx-background-color:  #4E31AA;
+    -fx-background-radius: 12px;
+    -fx-font-family: 'Righteous';
+    -fx-text-fill: #189ab4;
+    -fx-font-size: 20px;
+}
+
+.operation-button:hover {
+    -fx-background-color: #4E31AACC;
+    -fx-font-size: 22px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #189ab4;
+    -fx-border-width: 2px;
+}
+
+/* CUSTOMER */
+
+.search-box {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 100;
+}
+
+.search-button {
+    -fx-background-color: #828282;
+    -fx-background-radius: 30;
+}
+
+.transparent {
+    -fx-background-color: transparent;
+}
+
+.add_button {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 100;
+}
+
+/* Item */
+
+.product {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 30;
+}
+
+.border_radius {
+    -fx-background-radius: 10px;
+}
+.texthover:hover {
+    -fx-fill: #189ab4;
+    -fx-text-fill: #189ab4;
+}
