@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&&family=Patrick+Hand&&family=Courgette&&family=Dancing+Script:wght@700&family=Righteous&display=swap');
 
-
 .leftSide_window {
     -fx-background-radius: 10px;
     -fx-background-color: linear-gradient(to right, #4E31AA, #2F58CD);
