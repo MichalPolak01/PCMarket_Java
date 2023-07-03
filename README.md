@@ -1,4 +1,6 @@
-# PCMarket_Java
+# PCMarket_Java - Apliakcja sklepu internetowego na urządzenia desktopowe
+
+### Przedstawienie tematu projektu
 
 Tematem projektu jest stworzenie internetowego sklepu komputerowego. Aplikacja jest podzielona na dwie części.
 Pierwszą przeznaczono dla klienta. Po uruchomieniu programu klient musi zalogować się na istniejące konto lub stworzyć nowe. Następnie otrzymuje dostęp do listy produktów, które mogą być filtrowane pod względem nazwy i kategorii oraz sortowane pod względem ceny i daty dodania. W przypadku, gdy zdecyduje się na kupno któregoś z dostępnych towarów, może go dodać do koszyka, a następnie ustalić szczegóły wysyłki i dokonać zamówienia. Istnieje także opcja zarządzania kontem klienta, czyli możliwość zmiany danych kontaktowych. 
